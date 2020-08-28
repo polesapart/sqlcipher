@@ -205,7 +205,7 @@ typedef struct {
   char *keyspec;
 } cipher_ctx;
 
-
+typedef struct __sqlcipher_provider sqlcipher_provider;
 typedef struct {
   int store_pass;
   int kdf_iter;

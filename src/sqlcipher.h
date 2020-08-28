@@ -50,8 +50,9 @@
 #define SQLCIPHER_PBKDF2_HMAC_SHA512 2
 #define SQLCIPHER_PBKDF2_HMAC_SHA512_LABEL "PBKDF2_HMAC_SHA512"
 
+#include "sqliteInt.h"
 
-typedef struct {
+typedef struct __sqlcipher_provider {
   int (*activate)(void *ctx);
   int (*deactivate)(void *ctx);
   const char* (*get_provider_name)(void *ctx);

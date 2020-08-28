@@ -825,6 +825,10 @@ crypto_openssl.lo:	$(TOP)/src/crypto_openssl.c $(HDR)
 	$(LTCOMPILE) -c $(TOP)/src/crypto_openssl.c
 crypto_libtomcrypt.lo:	$(TOP)/src/crypto_libtomcrypt.c $(HDR)
 	$(LTCOMPILE) -c $(TOP)/src/crypto_libtomcrypt.c
+crypto_mbedtls.lo:	$(TOP)/src/crypto_mbedtls.c $(HDR)
+	$(LTCOMPILE) -c $(TOP)/src/crypto_mbedtls.c
+crypto_nss.lo:	$(TOP)/src/crypto_nss.c $(HDR)
+	$(LTCOMPILE) -c $(TOP)/src/crypto_nss.c
 crypto_cc.lo:	$(TOP)/src/crypto_cc.c $(HDR)
 	$(LTCOMPILE) -c $(TOP)/src/crypto_cc.c
 # END CRYPTO
@@ -1189,10 +1193,10 @@ userauth.lo:	$(TOP)/ext/userauth/userauth.c $(HDR) $(EXTHDR)
 sqlite3session.lo:	$(TOP)/ext/session/sqlite3session.c $(HDR) $(EXTHDR)
 	$(LTCOMPILE) -DSQLITE_CORE -c $(TOP)/ext/session/sqlite3session.c
 
-json1.lo:	$(TOP)/ext/misc/json1.c
+json1.lo:	$(TOP)/ext/misc/json1.c $(HDR) $(EXTHDR)
 	$(LTCOMPILE) -DSQLITE_CORE -c $(TOP)/ext/misc/json1.c
 
-stmt.lo:	$(TOP)/ext/misc/stmt.c
+stmt.lo:	$(TOP)/ext/misc/stmt.c $(HDR) $(EXTHDR)
 	$(LTCOMPILE) -DSQLITE_CORE -c $(TOP)/ext/misc/stmt.c
 
 # FTS5 things
